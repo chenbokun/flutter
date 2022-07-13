@@ -1,0 +1,60 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  plugins:
+    - dart_code_metrics
+
+linter:
+  rules:
+    avoid_print: true
+    avoid_void_async: true
+    await_only_futures: true
+    always_use_package_imports: true
+    avoid_unused_constructor_parameters: true
+    prefer_foreach: true
+    avoid_function_literals_in_foreach_calls: false
+    use_key_in_widget_constructors: false
+    constant_identifier_names: false
+    non_constant_identifier_names: false
+    avoid_renaming_method_parameters: false
+    control_flow_in_finally: false
+    overridden_fields: false
+    cancel_subscriptions: true
+
+dart_code_metrics:
+  anti-patterns:
+#    - long-method
+#    - long-parameter-list
+  metrics:
+#    cyclomatic-complexity: 20
+    maximum-nesting-level: 5
+#    number-of-parameters: 4
+#    source-lines-of-code: 50
+  rules:
+    # Flutter
+    - always-remove-listener
+    - avoid-border-all
+    - avoid-unnecessary-setstate
+    - avoid-wrapping-in-padding
+    - prefer-const-border-radius
+#    - avoid-returning-widgets
+#    - prefer-extracting-callbacks
+    # Dart
+    - avoid-collection-methods-with-unrelated-types
+    - avoid-unnecessary-type-assertions
+    - avoid-unnecessary-type-casts
+    - avoid-unrelated-type-assertions
+#    - avoid-unused-parameters
+#    - prefer-moving-to-variable
+#    - prefer-trailing-comma
+    - avoid-nested-conditional-expressions:
+        acceptable-level: 2
+#    - avoid-throw-in-catch-block
+    - double-literal-format
+    - no-boolean-literal-compare
+#    - no-empty-block
+    - no-equal-then-else
+    - no-object-declaration:
+       exclude:
+          - "**/app_page.dart"
+    - prefer-last
